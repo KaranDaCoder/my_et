@@ -20,14 +20,17 @@ const Add = () => {
       tx_type
     };
     console.log(create_expense);
-    const post_expense = await fetch(`http://localhost:3000/api/expenses`, {
-      // headers: {
-      //   'Content-Type': 'application/json',
-      //   Authorization: `Bearer ${session?.jwt_token}`,
-      // },
-      method: 'POST',
-      body: JSON.stringify(create_expense),
-    });
+    const post_expense = await fetch(
+      `${process.env.NEXTAUTH_URL}/api/expenses`,
+      {
+        // headers: {
+        //   'Content-Type': 'application/json',
+        //   Authorization: `Bearer ${session?.jwt_token}`,
+        // },
+        method: 'POST',
+        body: JSON.stringify(create_expense),
+      }
+    );
     router.refresh();
     router.back('/dashboard');
   };

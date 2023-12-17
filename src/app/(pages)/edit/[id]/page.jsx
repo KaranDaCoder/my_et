@@ -31,10 +31,13 @@ const EditTx = ({ params }) => {
   const handleFormSubmission = async (e) => {
     e.preventDefault();
     console.log(`handle Form Submission`);
-    const edited_post = await fetch(`http://localhost:3000/api/expenses/${id}` , {
-     method: 'PUT',
-     body: JSON.stringify(data)
-    });
+    const edited_post = await fetch(
+      `${process.env.NEXTAUTH_URL}/api/expenses/${id}`,
+      {
+        method: 'PUT',
+        body: JSON.stringify(data),
+      }
+    );
     console.log(edited_post);
     if(edited_post.ok) {
      router.refresh();
