@@ -18,7 +18,7 @@ const EditTx = ({ params }) => {
   const router = useRouter();
   useEffect(() => {
     const fetchTxDetails = async () => {
-      const req = await fetch(`http://localhost:3000/api/expenses/${id}`, {
+      const req = await fetch(`http://127.0.0.1:3000/api/expenses/${id}`, {
         method: 'GET',
       });
       const resp = await req.json();
@@ -32,7 +32,7 @@ const EditTx = ({ params }) => {
     e.preventDefault();
     console.log(`handle Form Submission`);
     const edited_post = await fetch(
-      `http://localhost:3000/api/expenses/${id}`,
+      `http://127.0.0.1:3000/api/expenses/${id}`,
       {
         method: 'PUT',
         body: JSON.stringify(data),
