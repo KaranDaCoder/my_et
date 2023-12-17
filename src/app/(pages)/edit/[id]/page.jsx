@@ -30,7 +30,6 @@ const EditTx = ({ params }) => {
 
   const handleFormSubmission = async (e) => {
     e.preventDefault();
-    console.log(`handle Form Submission`);
     const edited_post = await fetch(
       `http://127.0.0.1:3000/api/expenses/${id}`,
       {
