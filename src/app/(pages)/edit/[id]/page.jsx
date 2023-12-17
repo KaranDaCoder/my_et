@@ -32,7 +32,7 @@ const EditTx = ({ params }) => {
     e.preventDefault();
     console.log(`handle Form Submission`);
     const edited_post = await fetch(
-      `${process.env.NEXTAUTH_URL}/api/expenses/${id}`,
+      `http://localhost:3000/api/expenses/${id}`,
       {
         method: 'PUT',
         body: JSON.stringify(data),
