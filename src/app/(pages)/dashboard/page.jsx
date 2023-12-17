@@ -6,8 +6,7 @@ import sample from '@/utils/sample'
 const DashboardPage = async () => {
    const get_all_transactions = async () => {
      try {
-       //${process.env.NEXTAUTH_URL}
-       const request = await fetch(`/api/expenses`, {
+       const request = await fetch(`${process.env.NEXTAUTH_URL}/api/expenses`, {
          method: 'GET',
          headers: {
            'Content-Type': 'application/json',
